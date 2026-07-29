@@ -1,0 +1,517 @@
+emp <- data.frame(
+  EmpID = c(101,102,103,104,105,106,107,108,109,110),
+  Name = c("Goutham","Sairam","Suresh","Ramesh","Kiran",
+           "Ravi","Akshay","Vijay","Rahul","Arjun"),
+  Age = c(25,28,30,27,29,31,26,32,24,33),
+  Department = c("HR","IT","Finance","Sales","IT",
+                 "HR","Sales","Finance","IT","Marketing"),
+  Salary = c(30000,45000,50000,35000,48000,
+             40000,37000,55000,42000,60000),
+  City = c("Hyderabad","Delhi","Mumbai","Chennai","Pune",
+           "Kolkata","Bangalore","Jaipur","Lucknow","Ahmedabad"))
+print(emp)
+View(emp)
+str(emp)
+summary(emp)
+head(emp)
+tail(emp)
+emp[1, ]
+emp[,1]
+emp$Name
+emp$Salary
+emp[2:5, ]
+emp[,2:4]
+emp[c(2,4,6), c("Name","Salary")]
+emp$Experience <- c(2,4,6,3,5,7,2,8,1,9)
+print(emp)
+new_emp <- data.frame(
+  EmpID = 111,
+  Name = "Deepak",
+  Age = 29,
+  Department = "HR",
+  Salary = 47000,
+  City = "Nagpur",
+  Experience = 4
+)
+emp <- rbind(emp, new_emp)
+print(emp)
+emp$City <- NULL
+print(emp)
+emp <- emp[-3, ]
+print(emp)
+colnames(emp) <- c("ID","Employee_Name","Age",
+                   "Dept","Salary","Experience")
+print(emp)
+rownames(emp) <- paste("Emp",1:nrow(emp),sep="_")
+print(emp)
+colnames(emp)
+rownames(emp)
+nrow(emp)
+ncol(emp)
+dim(emp)
+
+
+
+
+
+
+
+
+
+print(emp)
+   EmpID  Name Age Department Salary      City
+1    101 Rahul  25         HR  30000 Hyderabad
+2    102 Sneha  28         IT  45000     Delhi
+3    103  Amit  30    Finance  50000    Mumbai
+4    104 Priya  27      Sales  35000   Chennai
+5    105 Kiran  29         IT  48000      Pune
+6    106  Ravi  31         HR  40000   Kolkata
+7    107 Anita  26      Sales  37000 Bangalore
+8    108 Vijay  32    Finance  55000    Jaipur
+9    109 Pooja  24         IT  42000   Lucknow
+10   110 Arjun  33  Marketing  60000 Ahmedabad
+
+
+
+str(emp)
+'data.frame':	10 obs. of  6 variables:
+ $ EmpID     : num  101 102 103 104 105 106 107 108 109 110
+ $ Name      : chr  "Rahul" "Sneha" "Amit" "Priya" ...
+ $ Age       : num  25 28 30 27 29 31 26 32 24 33
+ $ Department: chr  "HR" "IT" "Finance" "Sales" ...
+ $ Salary    : num  30000 45000 50000 35000 48000 40000 37000 55000 42000 60000
+ $ City      : chr  "Hyderabad" "Delhi" "Mumbai" "Chennai" ...
+
+
+
+summary(emp)
+     EmpID              Name         Age            Department
+ Min.   :101.0   Length   :10   Min.   :24.00   Length   :10  
+ 1st Qu.:103.2   N.unique :10   1st Qu.:26.25   N.unique : 5  
+ Median :105.5   N.blank  : 0   Median :28.50   N.blank  : 0  
+ Mean   :105.5   Min.nchar: 4   Mean   :28.50   Min.nchar: 2  
+ 3rd Qu.:107.8   Max.nchar: 5   3rd Qu.:30.75   Max.nchar: 9  
+ Max.   :110.0                  Max.   :33.00                 
+     Salary             City   
+ Min.   :30000   Length   :10  
+ 1st Qu.:37750   N.unique :10  
+ Median :43500   N.blank  : 0  
+ Mean   :44200   Min.nchar: 4  
+ 3rd Qu.:49500   Max.nchar: 9  
+
+
+
+head(emp)
+  EmpID  Name Age Department Salary      City
+1   101 Rahul  25         HR  30000 Hyderabad
+2   102 Sneha  28         IT  45000     Delhi
+3   103  Amit  30    Finance  50000    Mumbai
+4   104 Priya  27      Sales  35000   Chennai
+5   105 Kiran  29         IT  48000      Pune
+6   106  Ravi  31         HR  40000   Kolkata
+
+
+
+> tail(emp)
+   EmpID  Name Age Department Salary      City
+5    105 Kiran  29         IT  48000      Pune
+6    106  Ravi  31         HR  40000   Kolkata
+7    107 Anita  26      Sales  37000 Bangalore
+8    108 Vijay  32    Finance  55000    Jaipur
+9    109 Pooja  24         IT  42000   Lucknow
+10   110 Arjun  33  Marketing  60000 Ahmedabad
+
+
+
+> emp[1, ]
+  EmpID  Name Age Department Salary      City
+1   101 Rahul  25         HR  30000 Hyderabad
+
+
+
+> emp[,1]
+ [1] 101 102 103 104 105 106 107 108 109 110
+
+
+
+> emp$Name
+ [1] "Rahul" "Sneha" "Amit"  "Priya" "Kiran" "Ravi"  "Anita" "Vijay" "Pooja"
+[10] "Arjun"
+
+
+
+> emp$Salary
+ [1] 30000 45000 50000 35000 48000 40000 37000 55000 42000 60000
+
+
+
+> emp[2:5, ]
+  EmpID  Name Age Department Salary    City
+2   102 Sneha  28         IT  45000   Delhi
+3   103  Amit  30    Finance  50000  Mumbai
+4   104 Priya  27      Sales  35000 Chennai
+5   105 Kiran  29         IT  48000    Pune
+
+
+
+> emp[2:5, ]
+  EmpID  Name Age Department Salary    City
+2   102 Sneha  28         IT  45000   Delhi
+3   103  Amit  30    Finance  50000  Mumbai
+4   104 Priya  27      Sales  35000 Chennai
+5   105 Kiran  29         IT  48000    Pune
+
+
+
+> emp[,2:4]
+    Name Age Department
+1  Rahul  25         HR
+2  Sneha  28         IT
+3   Amit  30    Finance
+4  Priya  27      Sales
+5  Kiran  29         IT
+6   Ravi  31         HR
+7  Anita  26      Sales
+8  Vijay  32    Finance
+9  Pooja  24         IT
+10 Arjun  33  Marketing
+
+
+
+> emp[c(2,4,6), c("Name","Salary")]
+   Name Salary
+2 Sneha  45000
+4 Priya  35000
+6  Ravi  40000
+
+
+> emp$Experience <- c(2,4,6,3,5,7,2,8,1,9)
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> colnames(emp)
+[1] "EmpID"      "Name"       "Age"        "Department" "Salary"    
+[6] "City"       "Experience"
+
+
+
+> rownames(emp)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10"
+
+
+
+> nrow(emp)
+[1] 10
+
+
+> ncol(emp)
+[1] 7
+
+
+> dim(emp)
+[1] 10  7
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> View(emp)
+
+> str(emp)
+'data.frame':	10 obs. of  7 variables:
+ $ EmpID     : num  101 102 103 104 105 106 107 108 109 110
+ $ Name      : chr  "Rahul" "Sneha" "Amit" "Priya" ...
+ $ Age       : num  25 28 30 27 29 31 26 32 24 33
+ $ Department: chr  "HR" "IT" "Finance" "Sales" ...
+ $ Salary    : num  30000 45000 50000 35000 48000 40000 37000 55000 42000 60000
+ $ City      : chr  "Hyderabad" "Delhi" "Mumbai" "Chennai" ...
+ $ Experience: num  2 4 6 3 5 7 2 8 1 9
+
+
+> head(emp)
+  EmpID  Name Age Department Salary      City Experience
+1   101 Rahul  25         HR  30000 Hyderabad          2
+2   102 Sneha  28         IT  45000     Delhi          4
+3   103  Amit  30    Finance  50000    Mumbai          6
+4   104 Priya  27      Sales  35000   Chennai          3
+5   105 Kiran  29         IT  48000      Pune          5
+6   106  Ravi  31         HR  40000   Kolkata          7
+
+
+
+> tail(emp)
+   EmpID  Name Age Department Salary      City Experience
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> emp[1, ]
+  EmpID  Name Age Department Salary      City Experience
+1   101 Rahul  25         HR  30000 Hyderabad          2
+
+
+
+> emp[,1]
+ [1] 101 102 103 104 105 106 107 108 109 110
+
+
+> emp$Name
+ [1] "Rahul" "Sneha" "Amit"  "Priya" "Kiran" "Ravi"  "Anita" "Vijay" "Pooja"
+[10] "Arjun"
+
+
+> emp[2:5, ]
+  EmpID  Name Age Department Salary    City Experience
+2   102 Sneha  28         IT  45000   Delhi          4
+3   103  Amit  30    Finance  50000  Mumbai          6
+4   104 Priya  27      Sales  35000 Chennai          3
+5   105 Kiran  29         IT  48000    Pune          5
+
+
+> emp[c(2,4,6), c("Name","Salary")]
+   Name Salary
+2 Sneha  45000
+4 Priya  35000
+6  Ravi  40000
+
+
+
+> emp$Experience <- c(2,4,6,3,5,7,2,8,1,9)
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
+
+
+
+> rownames(emp)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10"
+
+
+> colnames(emp)
+[1] "EmpID"      "Name"       "Age"        "Department" "Salary"    
+[6] "City"       "Experience"
+
+
+> nrow(emp)
+[1] 10
+
+
+> rownames(emp)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10"
+
+
+> ncol(emp)
+[1] 7
+
+
+> dim(emp)
+[1] 10  7
+
+
+> print(emp)
+   EmpID  Name Age Department Salary      City Experience
+1    101 Rahul  25         HR  30000 Hyderabad          2
+2    102 Sneha  28         IT  45000     Delhi          4
+3    103  Amit  30    Finance  50000    Mumbai          6
+4    104 Priya  27      Sales  35000   Chennai          3
+5    105 Kiran  29         IT  48000      Pune          5
+6    106  Ravi  31         HR  40000   Kolkata          7
+7    107 Anita  26      Sales  37000 Bangalore          2
+8    108 Vijay  32    Finance  55000    Jaipur          8
+9    109 Pooja  24         IT  42000   Lucknow          1
+10   110 Arjun  33  Marketing  60000 Ahmedabad          9
