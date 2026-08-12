@@ -1,0 +1,135 @@
+# R Programming Lab
+# Data Structures - Factors
+
+# 1. Creating a factor
+gender <- factor(c("Male", "Female", "Male", "Female", "Male"))
+
+print(gender)
+
+# 2. Displaying the levels of the factor
+print(levels(gender))
+
+# 3. Finding the number of levels
+print(nlevels(gender))
+
+# 4. Displaying the internal codes of the factor
+print(as.numeric(gender))
+
+# 5. Creating a factor with specified levels
+color <- factor(
+  c("Red", "Blue", "Green", "Red", "Blue"),
+  levels = c("Red", "Blue", "Green")
+)
+
+print(color)
+print(levels(color))
+
+# 6. Creating a factor with labels
+marks <- factor(
+  c(1, 2, 3, 1, 2),
+  levels = c(1, 2, 3),
+  labels = c("Low", "Medium", "High")
+)
+
+print(marks)
+
+# 7. Accessing elements of a factor
+print(gender[1])
+print(gender[2:4])
+
+# 8. Accessing a particular level
+print(levels(gender)[1])
+
+# 9. Changing the levels of a factor
+levels(gender) <- c("M", "F")
+print(gender)
+
+# 10. Creating an ordered factor
+size <- factor(
+  c("Small", "Large", "Medium", "Small", "Large"),
+  levels = c("Small", "Medium", "Large"),
+  ordered = TRUE
+)
+
+print(size)
+print(levels(size))
+
+# 11. Checking whether the factor is ordered
+print(is.ordered(size))
+
+# 12. Comparing ordered factors
+print(size[1] < size[2])
+
+# 13. Counting frequency of each level
+print(table(gender))
+
+# 14. Adding a new level to a factor
+levels(gender) <- c(levels(gender), "Unknown")
+print(levels(gender))
+
+# 15. Assigning the new level
+gender[5] <- "Unknown"
+print(gender)
+
+# 16. Converting factor into character
+gender_char <- as.character(gender)
+print(gender_char)
+
+# 17. Converting factor into numeric
+num_factor <- factor(c("10", "20", "30", "10"))
+
+num_values <- as.numeric(as.character(num_factor))
+print(num_values)
+
+# 18. Checking the structure of a factor
+str(gender)
+
+# 19. Checking the class of a factor
+print(class(gender))
+
+# 20. Summary of a factor
+print(summary(gender))
+
+
+
+
+# R Programming Lab
+# Ordered Factors
+
+# Creating an ordered factor
+size <- factor(
+  c("Small", "Large", "Medium", "Small", "Large"),
+  levels = c("Small", "Medium", "Large"),
+  ordered = TRUE
+)
+
+# Display the ordered factor
+print(size)
+
+# Display the levels
+print(levels(size))
+
+# Check whether it is an ordered factor
+print(is.ordered(size))
+
+# Check whether it is a factor
+print(is.factor(size))
+
+# Number of levels
+print(nlevels(size))
+
+# Accessing elements
+print(size[1])
+print(size[2:4])
+
+# Comparing ordered factors
+print(size[1] < size[2])
+
+# Frequency of each level
+print(table(size))
+
+# Display structure
+str(size)
+
+# Display summary
+print(summary(size))
