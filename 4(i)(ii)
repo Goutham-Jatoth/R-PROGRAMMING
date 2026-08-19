@@ -1,0 +1,165 @@
+v <- c(10, 20, 30, 40, 50)
+v
+v[2]
+v[c(2,4)]
+v[2:4]
+v[v > 25]
+
+
+m <- matrix(1:9, nrow=3, ncol=3)
+print(m)
+print(m[2,3])
+print(m[1,])
+print(m[,2])
+print(m[c(1,3), c(1,3)])
+
+
+A <- matrix(1:9, nrow=3, ncol=3)
+B <- matrix(10:18, nrow=3, ncol=3)
+C <- matrix(19:27, nrow=3, ncol=3)
+print("Matrix A:")
+print(A)
+print("Matrix B:")
+print(B)
+print("Matrix C:")
+print(C)
+arr <- array(c(A, B, C), dim=c(3,3,3))
+print("3 x 3 x 3 Array:")
+print(arr)
+add <- A + B
+print("Addition of A and B:")
+print(add)
+mul <- A %*% B
+print("Multiplication of A and B:")
+print(mul)
+
+
+
+
+
+
+# Employee Salary Analyzer
+
+employee_id <- c(101, 102, 103, 104, 105)
+name <- c("Ravi", "Anil", "Sita", "Priya", "Kiran")
+department <- c("IT", "HR", "IT", "Finance", "HR")
+salary <- c(50000, 40000, 70000, 60000, 45000)
+employee <- data.frame(
+  Employee_ID = employee_id,
+  Name = name,
+  Department = department,
+  Salary = salary
+)
+employee$Department <- factor(employee$Department)
+print("Employee Details:")
+print(employee)
+average_salary <- mean(employee$Salary)
+print("Average Salary:")
+print(average_salary)
+highest <- which.max(employee$Salary)
+print("Highest Paid Employee:")
+print(employee[highest, ])
+department_salary <- aggregate(
+  Salary ~ Department,
+  data = employee,
+  FUN = mean
+)
+print("Department Salary Comparison:")
+print(department_salary)
+employee$Category <- cut(
+  employee$Salary,
+  breaks = c(0, 45000, 60000, Inf),
+  labels = c("Low", "Medium", "High")
+)
+print("Employee Salary Categories:")
+print(employee)
+result <- list(
+  Average_Salary = average_salary,
+  Highest_Paid_Employee = employee[highest, ],
+  Department_Comparison = department_salary
+)
+print("Final Results:")
+print(result)
+
+
+
+# Install package if required
+install.packages("ggplot2")
+
+# Load package
+library(ggplot2)
+
+# Employee data
+employee <- data.frame(
+  Employee_ID = c(101, 102, 103, 104, 105),
+  Name = c("Ravi", "Anil", "Sita", "Priya", "Kiran"),
+  Department = c("IT", "HR", "IT", "Finance", "HR"),
+  Salary = c(50000, 40000, 70000, 60000, 45000)
+)
+
+# Salary visualization
+ggplot(employee, aes(x = Name, y = Salary, fill = Department)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Employee Salary Analysis",
+    x = "Employee",
+    y = "Salary"
+  ) +
+  theme_minimal()
+
+
+
+library(ggplot2)
+
+ggplot(employee, aes(x = Department, y = Salary, fill = Department)) +
+  stat_summary(
+    fun = mean,
+    geom = "bar"
+  ) +
+  labs(
+    title = "Average Salary by Department",
+    x = "Department",
+    y = "Average Salary"
+  ) +
+  theme_minimal()
+
+
+
+
+library(ggplot2)
+
+ggplot(employee, aes(x = Department, y = Salary, fill = Department)) +
+  stat_summary(
+    fun = mean,
+    geom = "bar"
+  ) +
+  labs(
+    title = "Average Salary by Department",
+    x = "Department",
+    y = "Average Salary"
+  ) +
+  theme_minimal()
+
+
+
+library(ggplot2)
+
+# Identify highest salary
+highest_salary <- max(employee$Salary)
+
+# Create a new column
+employee$Status <- ifelse(
+  employee$Salary == highest_salary,
+  "Highest Paid",
+  "Employee"
+)
+
+# Visualization
+ggplot(employee, aes(x = Name, y = Salary, fill = Status)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Highest Paid Employee Analysis",
+    x = "Employee",
+    y = "Salary"
+  ) +
+  theme_minimal()
