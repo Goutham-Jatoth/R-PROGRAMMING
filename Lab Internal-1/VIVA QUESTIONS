@@ -1,0 +1,362 @@
+🟢 PROGRAM-2 VIVA QUESTIONS & ANSWERS
+Basics of R Programming
+
+The manual covers R syntax, variables, data types, data structures, operators, control structures, functions, packages, and basic data handling.
+
+1. What is R?
+
+Answer:
+R is a programming language used mainly for data analysis, statistics, and graphics.
+
+2. What is RStudio?
+
+Answer:
+RStudio is an IDE (Integrated Development Environment) used to write and run R programs.
+
+3. How do you write a comment in R?
+
+Answer:
+Use #.
+
+# This is a comment
+4. How do you assign a value to a variable?
+
+Answer:
+We mainly use <-.
+
+x <- 10
+5. What is a variable?
+
+Answer:
+A variable is a name used to store a value.
+
+Example:
+
+age <- 20
+6. What are the basic data types in R?
+
+Answer:
+The main data types are:
+
+Logical
+Numeric
+Integer
+Complex
+Character
+Raw
+7. What is a logical data type?
+
+Answer:
+It stores TRUE or FALSE.
+
+x <- TRUE
+8. What is a numeric data type?
+
+Answer:
+It stores numbers, usually decimal or real numbers.
+
+x <- 63.5
+9. What is an integer?
+
+Answer:
+An integer is a whole number.
+
+x <- 10L
+10. What is a character data type?
+
+Answer:
+It stores text or characters.
+
+name <- "R Programming"
+11. What is a vector?
+
+Answer:
+A vector is a one-dimensional collection of values of the same type.
+
+x <- c(10,20,30)
+12. Which function is used to create a vector?
+
+Answer:
+c()
+
+13. What is a matrix?
+
+Answer:
+A matrix is a two-dimensional structure containing rows and columns.
+
+14. What is a list?
+
+Answer:
+A list is a collection that can contain different types of data.
+
+15. What is a data frame?
+
+Answer:
+A data frame is a table-like structure where different columns can have different data types.
+
+16. What is a factor?
+
+Answer:
+A factor is used to store categorical data.
+
+Example: Male/Female or Yes/No.
+
+17. What are operators?
+
+Answer:
+Operators are symbols used to perform operations on values.
+
+18. Name the types of operators in R.
+
+Answer:
+
+Arithmetic
+Relational
+Logical
+Assignment
+Miscellaneous
+19. Give some arithmetic operators.
+
+Answer:
+
++  -  *  /  %%  %/%  ^
+20. What is %%?
+
+Answer:
+%% gives the remainder.
+
+10 %% 3
+
+Output:
+
+1
+21. What is %/%?
+
+Answer:
+%/% gives the integer quotient.
+
+10 %/% 3
+
+Output:
+
+3
+22. What are relational operators?
+
+Answer:
+They are used to compare values.
+
+Examples:
+
+<  >  <=  >=  ==  !=
+23. What are logical operators?
+
+Answer:
+They are used to perform logical operations.
+
+Examples:
+
+&  |  !
+24. What is an if-else statement?
+
+Answer:
+It is used for decision making.
+
+if (x > 0) {
+  print("Positive")
+} else {
+  print("Negative")
+}
+25. What is a loop?
+
+Answer:
+A loop is used to repeat a block of code.
+
+26. Name the loops in R.
+
+Answer:
+
+for
+while
+repeat
+27. What is a function?
+
+Answer:
+A function is a reusable block of code.
+
+28. How do you create a function in R?
+
+Answer:
+Using the function() keyword.
+
+square <- function(x) {
+  x^2
+}
+29. What is a package in R?
+
+Answer:
+A package is a collection of functions, data, and documentation.
+
+30. How do you install a package?
+
+Answer:
+
+install.packages("package_name")
+31. How do you load a package?
+
+Answer:
+
+library(package_name)
+32. How do you check the type/class of a variable?
+
+Answer:
+Using class().
+
+class(x)
+⭐ Program-2 Most Important Viva
+
+If you have very little time, memorize these:
+
+R → Data analysis, statistics and graphics
+Variable → Stores a value
+Assignment → <-
+Vector → 1D collection
+Matrix → 2D rows and columns
+List → Different data types
+Data frame → Table-like structure
+Function → Reusable code
+Loop → Repeats code
+Package → Collection of R functions/data
+Comment → #
+
+🔵 PROGRAM-3 VIVA QUESTIONS & ANSWERS
+Vector and Matrix Operations
+
+Program-3 asks you to perform addition, subtraction, multiplication and division on vectors, and multiplication/division operations involving matrices and vectors.
+
+1. What is a vector?
+
+Answer:
+A vector is a one-dimensional collection of values.
+
+2. How do you create a vector?
+
+Answer:
+Using c().
+
+x <- c(10,20,30)
+3. How do you add two vectors?
+
+Answer:
+Using +.
+
+x + y
+4. How do you subtract two vectors?
+
+Answer:
+Using -.
+
+x - y
+5. How do you multiply two vectors?
+
+Answer:
+Using *.
+
+x * y
+6. How do you divide two vectors?
+
+Answer:
+Using /.
+
+x / y
+7. How does R perform vector operations?
+
+Answer:
+R normally performs them element by element.
+
+Example:
+
+10 20 30
++  2  4  5
+-----------
+12 24 35
+8. What is vector recycling?
+
+Answer:
+If vectors have different lengths, R repeats the shorter vector.
+
+Example:
+
+c(10,20,30,40) + c(2,5)
+
+R uses:
+
+10 20 30 40
+ 2  5  2  5
+9. What is a matrix?
+
+Answer:
+A matrix is a two-dimensional structure with rows and columns.
+
+10. How do you create a matrix?
+
+Answer:
+Using matrix().
+
+A <- matrix(c(1,2,3,4), nrow=2)
+11. What is * used for in matrices?
+
+Answer:
+* performs element-wise multiplication.
+
+12. What is %*%?
+
+Answer:
+%*% is used for matrix multiplication.
+
+13. Difference between * and %*%?
+
+Answer:
+
+*    → Element-wise multiplication
+%*%  → Matrix multiplication
+14. How do you divide a matrix by a vector?
+
+Answer:
+Using /.
+
+A / x
+15. What happens if a vector is shorter during an operation?
+
+Answer:
+R recycles the shorter vector.
+
+16. Which function creates a vector?
+
+Answer:
+c()
+
+17. Which function creates a matrix?
+
+Answer:
+matrix()
+
+🔥 MOST IMPORTANT PROGRAM-3 VIVA
+
+Memorize these 8 answers:
+
+Vector? → 1D collection of values.
+Create vector? → c()
+Addition? → +
+Subtraction? → -
+Multiplication? → *
+Division? → /
+Matrix multiplication? → %*%
+Vector recycling? → Shorter vector is repeated.
+🧠 Easy Memory Trick
+PROGRAM 2
+R → Variables → Data Types → Structures → Operators → Loops → Functions → Packages
+
+PROGRAM 3
+Vector → +  -  *  /
+Matrix → %*%
+Different size → Recycling
