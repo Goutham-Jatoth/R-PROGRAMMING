@@ -1,0 +1,949 @@
+R PROGRAMMING LAB – WEEK 2 / PROGRAM 2
+Program 2: Basics of R Programming
+AIM
+
+To learn the basics of R Programming such as Data Types, Variables, Operators, Data Structures, Control Structures, Functions, Packages and Data Import/Export.
+
+1. INTRODUCTION TO R
+
+R is a programming language and environment mainly used for:
+
+Statistical computing
+Data analysis
+Data visualization
+Machine learning
+
+R is widely used by data analysts, statisticians and researchers.
+
+2. BASIC R SYNTAX
+
+R syntax is simple and easy to understand.
+
+Comments
+
+Comments are written using #.
+
+# This is a comment
+
+Comments are ignored by R.
+
+Example
+x <- 10
+y <- 20
+
+x + y
+Output
+[1] 30
+Important point
+
+Semicolon ; can be used at the end of a statement, but it is optional in R.
+
+3. VARIABLES IN R
+
+A variable is used to store a value.
+
+R is dynamically typed, so we do not need to declare the data type of a variable separately.
+
+Example
+x <- 10
+name <- "Goutham"
+marks <- 85
+
+Here:
+
+x stores 10
+name stores "Goutham"
+marks stores 85
+Assignment Operators
+
+The main assignment operators are:
+
+Operator	Example
+<-	x <- 10
+=	x = 10
+<<-	x <<- 10
+->	10 -> x
+->>	10 ->> x
+
+The preferred assignment operator in R is:
+
+<-
+
+Example:
+
+x <- 10
+print(x)
+
+Output:
+
+[1] 10
+4. VARIABLE NAMING RULES
+
+Remember these for viva:
+
+A variable should start with a letter.
+It can contain letters, digits and underscore _.
+R is case-sensitive.
+MyVar and myvar are different variables.
+
+Example:
+
+student_name <- "Ravi"
+marks1 <- 90
+
+Valid.
+
+1student <- "Ravi"
+
+Invalid because the variable starts with a number.
+
+5. RESERVED KEYWORDS
+
+Some words have special meanings in R and should not normally be used as variable names.
+
+Important reserved keywords from the manual include:
+
+for
+in
+repeat
+while
+function
+if
+else
+next
+break
+TRUE
+FALSE
+NULL
+Inf
+NaN
+NA
+
+The manual also lists:
+
+NA_integer_
+NA_real_
+NA_complex_
+NA_character_
+
+6. SPECIAL VALUES IN R
+
+These are very important for viva.
+
+Value	Meaning
+NA	Not Available / missing value
+NULL	Missing or undefined value
+NaN	Not a Number
+TRUE	Logical true
+FALSE	Logical false
+Inf	Infinity
+Examples
+0/0
+
+Output:
+
+NaN
+
+And:
+
+1/0
+
+Output:
+
+Inf
+
+The manual specifically describes NA, NULL, NaN, TRUE/FALSE, and Inf.
+
+7. CONSTANTS IN R
+
+A constant is a value whose value is fixed.
+
+The manual describes two main types:
+
+1. Numeric Constants
+
+Examples:
+
+10
+20.5
+123L
+3+2i
+
+L indicates an integer and i is used for complex numbers.
+
+2. Character Constants
+
+Character values are written inside:
+
+" "
+
+or
+
+' '
+
+Example:
+
+name <- "R Programming"
+
+8. DATA TYPES IN R
+
+A data type tells us what type of value a variable contains.
+
+The important data types covered in the manual are:
+
+Logical
+Numeric
+Integer
+Complex
+Character
+Raw
+
+8.1 Logical Data Type
+
+Logical data has only two values:
+
+TRUE
+FALSE
+Example
+a <- TRUE
+b <- FALSE
+
+print(a)
+print(class(a))
+
+print(b)
+print(class(b))
+Output
+[1] TRUE
+[1] "logical"
+
+[1] FALSE
+[1] "logical"
+
+T can also represent TRUE and F can represent FALSE.
+
+8.2 Numeric Data Type
+
+Numeric data represents real numbers, with or without decimal values.
+
+Example
+weight <- 63.5
+height <- 182
+
+print(weight)
+print(class(weight))
+
+print(height)
+print(class(height))
+Output
+[1] 63.5
+[1] "numeric"
+
+[1] 182
+[1] "numeric"
+
+8.3 Integer Data Type
+
+Integer represents whole numbers.
+
+In R, we use L to explicitly specify an integer.
+
+Example
+x <- 186L
+
+print(x)
+print(class(x))
+Output
+[1] 186
+[1] "integer"
+
+Easy memory trick
+186L → Integer
+8.4 Complex Data Type
+
+Complex numbers contain an imaginary part.
+
+We use i for the imaginary part.
+
+Example
+x <- 3 + 2i
+
+print(x)
+print(class(x))
+
+Output:
+
+[1] 3+2i
+[1] "complex"
+
+The manual uses 3 + 2i as the example.
+
+8.5 Character Data Type
+
+Character data is used for characters and strings.
+
+We can use single or double quotes.
+
+Example
+fruit <- "Apple"
+letter <- 'A'
+
+print(fruit)
+print(class(fruit))
+
+print(letter)
+print(class(letter))
+
+Output:
+
+[1] "Apple"
+[1] "character"
+
+[1] "A"
+[1] "character"
+
+8.6 Raw Data Type
+
+Raw data represents raw bytes.
+
+Two important functions are:
+
+charToRaw()
+
+Converts character → raw.
+
+rawToChar()
+
+Converts raw → character.
+
+Example
+x <- charToRaw("Hello")
+
+print(x)
+print(class(x))
+
+y <- rawToChar(x)
+
+print(y)
+print(class(y))
+
+The manual explains raw data and these two conversion functions.
+
+9. DATA STRUCTURES IN R
+
+R provides several important data structures.
+
+Data Structure	Simple Meaning
+Vector	One-dimensional collection
+Matrix	Two-dimensional rows and columns
+List	Collection of different types
+Data Frame	Table-like structure
+Factor	Categorical data
+
+The manual describes these structures directly.
+
+Easy memory
+
+V M L D F
+
+V → Vector
+M → Matrix
+L → List
+D → Data Frame
+F → Factor
+10. OPERATORS IN R
+
+Operators are symbols used to perform operations.
+
+The manual divides R operators into:
+
+Arithmetic operators
+Relational operators
+Logical operators
+Assignment operators
+Miscellaneous operators
+
+10.1 Arithmetic Operators
+
+Used for mathematical calculations.
+
+Operator	Meaning	Example
++	Addition	7 + 3
+-	Subtraction	7 - 3
+*	Multiplication	7 * 3
+/	Division	7 / 3
+%%	Modulus	7 %% 3
+%/%	Integer division	7 %/% 3
+^	Power	2^3
+
+Example
+x <- 5
+y <- 16
+
+x + y
+x - y
+x * y
+y / x
+y %/% x
+y %% x
+y ^ x
+Output
+[1] 21
+[1] -11
+[1] 80
+[1] 3.2
+[1] 3
+[1] 1
+[1] 1048576
+
+Remember
+/    → Normal division
+%%   → Remainder
+%/%  → Integer quotient
+^    → Power
+10.2 RELATIONAL OPERATORS
+
+These operators compare two values.
+
+Operator	Meaning
+==	Equal
+!=	Not equal
+<	Less than
+>	Greater than
+<=	Less than or equal
+>=	Greater than or equal
+
+Example
+7 == 3
+7 != 3
+7 < 3
+7 > 3
+7 <= 3
+7 >= 3
+
+Output:
+
+FALSE
+TRUE
+FALSE
+TRUE
+FALSE
+TRUE
+10.3 LOGICAL OPERATORS
+
+Logical operators are used for Boolean operations such as AND, OR and NOT.
+
+Operator	Meaning
+!	NOT
+&	Element-wise AND
+&&	AND
+`	`
+`	
+
+Example
+x <- c(TRUE, FALSE, 0, 6)
+y <- c(FALSE, TRUE, FALSE, TRUE)
+
+!x
+x & y
+x && y
+x | y
+x || y
+
+Important point:
+
+& and | work element by element.
+&& and || examine only the first element.
+
+10.4 ASSIGNMENT OPERATORS
+
+Assignment operators assign values to variables.
+
+x <- 5
+x = 10
+20 -> y
+
+Main assignment operators:
+
+= 
+<-
+<<-
+->
+->>
+
+10.5 MISCELLANEOUS OPERATORS
+
+Important miscellaneous operators are:
+
+Operator	Use
+:	Creates sequence
+%in%	Checks whether an element belongs to a vector
+%*%	Matrix multiplication
+Examples
+x <- 1:10
+
+Creates:
+
+1 2 3 4 5 6 7 8 9 10
+
+Another example:
+
+x %in% y
+
+Checks whether elements of x are present in y.
+
+%*% is used for matrix multiplication.
+
+11. OPERATIONS ON VECTORS
+
+Vectors are created using the c() function.
+
+c() means combine/concatenate.
+
+Example
+x <- c(2, 8, 3)
+y <- c(6, 4, 1)
+
+x + y
+x > y
+
+Output:
+
+[1] 8 12 4
+[1] FALSE TRUE TRUE
+
+R performs operations element by element on vectors.
+
+12. VECTOR RECYCLING
+
+If two vectors have different lengths, R can reuse/recycle the shorter vector.
+
+Example
+x <- c(2, 1, 8, 3)
+y <- c(9, 4)
+
+x + y
+
+R performs:
+
+2 + 9
+1 + 4
+8 + 9
+3 + 4
+
+Output:
+
+[1] 11 5 17 7
+
+Important viva point
+
+If the longer vector's length is not an exact multiple of the shorter vector's length, R gives a warning.
+
+13. CONTROL STRUCTURES IN R
+
+Control structures control the flow of a program.
+
+The manual mentions:
+
+Conditional statements
+if
+else if
+else
+Loops
+for
+while
+
+Example of if-else
+x <- 10
+
+if (x > 5) {
+  print("x is greater than 5")
+} else {
+  print("x is less than or equal to 5")
+}
+
+Output:
+
+[1] "x is greater than 5"
+Example of for loop
+for (i in 1:5) {
+  print(i)
+}
+
+Output:
+
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+
+The manual gives these as examples of conditional statements and loops.
+
+14. FUNCTIONS IN R
+
+A function is a block of code that performs a specific task.
+
+Functions help us reuse code.
+
+We can create our own functions using:
+
+function()
+Example
+square <- function(x) {
+  return(x^2)
+}
+
+square(5)
+
+Output:
+
+[1] 25
+
+15. PACKAGES IN R
+
+A package is a collection of R functions, data and documentation that extends R's functionality.
+
+Install a package
+install.packages("ggplot2")
+Load a package
+library(ggplot2)
+
+The manual explains that packages extend R and can be installed using install.packages() and loaded using library().
+
+16. DATA IMPORT AND EXPORT
+
+R can import data from different sources such as:
+
+CSV
+Excel
+Databases
+Common import functions
+read.csv()
+read.table()
+read.xlsx()
+Export functions
+write.csv()
+write.table()
+
+Example
+data <- read.csv("students.csv")
+print(data)
+17. COMPLETE SIMPLE PROGRAM FOR LAB INTERNAL
+
+If your faculty asks you to demonstrate Program 2 practically, this is a good compact program covering the major concepts.
+
+# Program 2: Basics of R Programming
+
+# Variables
+name <- "Goutham"
+age <- 20
+marks <- 85.5
+passed <- TRUE
+
+print(name)
+print(age)
+print(marks)
+print(passed)
+
+# Data types
+print(class(name))
+print(class(age))
+print(class(marks))
+print(class(passed))
+
+# Integer
+x <- 10L
+print(x)
+print(class(x))
+
+# Complex
+z <- 3 + 2i
+print(z)
+print(class(z))
+
+# Vector
+numbers <- c(10, 20, 30, 40, 50)
+print(numbers)
+
+# Arithmetic operators
+a <- 10
+b <- 3
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a %% b)
+print(a %/% b)
+print(a ^ b)
+
+# Relational operators
+print(a > b)
+print(a == b)
+
+# Logical operators
+p <- TRUE
+q <- FALSE
+
+print(p & q)
+print(p | q)
+print(!p)
+
+# Sequence operator
+print(1:10)
+
+# If-else
+if (marks >= 40) {
+  print("Pass")
+} else {
+  print("Fail")
+}
+
+# For loop
+for (i in 1:5) {
+  print(i)
+}
+
+# Function
+square <- function(x) {
+  return(x^2)
+}
+
+print(square(5))
+18. EXPECTED IMPORTANT OUTPUTS
+
+You don't need to memorize every output. Understand these:
+
+Data types
+"character"
+"numeric"
+"logical"
+"integer"
+"complex"
+Arithmetic
+
+For:
+
+a <- 10
+b <- 3
+a + b   → 13
+a - b   → 7
+a * b   → 30
+a / b   → 3.333333
+a %% b  → 1
+a %/% b → 3
+a ^ b   → 1000
+Logical
+TRUE & FALSE → FALSE
+TRUE | FALSE → TRUE
+!TRUE        → FALSE
+19. RESULT
+
+Thus, the basic concepts of R Programming such as variables, data types, data structures, operators, control structures, functions, packages and data import/export were studied and executed successfully.
+
+🔥 LAB INTERNAL VIVA – MOST IMPORTANT QUESTIONS
+
+These are directly based on the viva section associated with Program 2 in your manual.
+
+1. What is R?
+
+Answer:
+R is a programming language and environment mainly used for statistical computing, data analysis and graphics.
+
+2. How do you assign a value to a variable in R?
+
+Answer:
+Using the assignment operator <-.
+
+Example:
+
+x <- 10
+3. What is a vector?
+
+Answer:
+A vector is a one-dimensional collection of elements of the same data type.
+
+Example:
+
+x <- c(10,20,30)
+4. What is a data frame?
+
+Answer:
+A data frame is a table-like data structure in R. Different columns can contain different data types.
+
+5. What is a function?
+
+Answer:
+A function is a block of code used to perform a specific task and can be reused.
+
+6. How do you define a function?
+
+Answer:
+
+function()
+
+Example:
+
+square <- function(x) {
+  return(x^2)
+}
+7. How do you check the data type of a variable?
+
+Answer:
+Using the class() function.
+
+class(x)
+8. What is an operator?
+
+Answer:
+An operator is a symbol used to perform an operation on values.
+
+9. What are the types of operators in R?
+
+Answer:
+
+Arithmetic
+Relational
+Logical
+Assignment
+Miscellaneous
+10. What is %/%?
+
+Answer:
+It performs integer division.
+
+Example:
+
+7 %/% 3
+
+Output:
+
+2
+11. What is %%?
+
+Answer:
+It gives the remainder.
+
+7 %% 3
+
+Output:
+
+1
+12. What is ^?
+
+Answer:
+It is used for exponentiation/power.
+
+2^3
+
+Output:
+
+8
+13. What is c()?
+
+Answer:
+c() is used to combine values and create a vector.
+
+x <- c(10,20,30)
+14. What is NA?
+
+Answer:
+NA means Not Available and represents a missing value.
+
+15. What is NULL?
+
+Answer:
+NULL represents a missing or undefined value.
+
+16. What is NaN?
+
+Answer:
+NaN means Not a Number.
+
+Example:
+
+0/0
+17. What is Inf?
+
+Answer:
+Inf represents infinity.
+
+Example:
+
+1/0
+18. What are control structures in R?
+
+Answer:
+Control structures control the flow of execution. Examples are if, else, for and while.
+
+19. What is vector recycling?
+
+Answer:
+When two vectors have different lengths, R repeats the shorter vector to perform the operation.
+
+20. How do you install a package?
+
+Answer:
+
+install.packages("package_name")
+21. How do you load a package?
+
+Answer:
+
+library(package_name)
+22. How do you read a CSV file?
+
+Answer:
+
+read.csv("file.csv")
+23. How do you write data to a CSV file?
+
+Answer:
+
+write.csv(data, "file.csv")
+⭐ 1-MINUTE REVISION BEFORE INTERNAL
+
+If you have very little time, remember this:
+
+R → Statistical computing + Data analysis + Graphics
+
+Variable → Stores value
+Assignment → <-
+
+Data Types:
+Logical → TRUE/FALSE
+Numeric → 10, 10.5
+Integer → 10L
+Complex → 3+2i
+Character → "Hello"
+Raw → Raw bytes
+
+Data Structures:
+Vector → 1D
+Matrix → 2D
+List → Different types
+Data Frame → Table
+Factor → Categorical data
+
+Operators:
+Arithmetic → + - * / %% %/% ^
+Relational → == != < > <= >=
+Logical → ! & && | ||
+Assignment → <- = <<- -> ->>
+Miscellaneous → : %in% %*%
+
+Control:
+if/else
+for
+while
+
+Function → function()
+
+Package:
+install.packages()
+library()
+
+CSV:
+read.csv()
+write.csv()
