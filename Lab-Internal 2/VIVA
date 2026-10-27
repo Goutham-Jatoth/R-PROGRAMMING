@@ -1,0 +1,59 @@
+Experiment 1: Installing R and Packages
+1. What is R? — R is a programming language used for statistical computing and data analysis.
+2. What is RStudio? — RStudio is an IDE used to write and run R programs.
+3. Which command installs a package? — install.packages("package_name").
+4. Which command loads a package? — library(package_name).
+5. What is a package in R? — A package is a collection of functions and tools.
+Experiment 2: Basics of R Programming
+1. What is a variable? — A variable stores a value.
+2. How do you assign a value in R? — Using <- or =.
+3. What are data types? — They define the kind of data stored, such as numeric, integer, character, and logical.
+4. What is a vector? — A vector stores multiple values of the same basic type.
+5. What is a comment in R? — Text beginning with # is treated as a comment.
+Experiment 3: Vector and Matrix Operations
+1. What is a vector? — A one-dimensional collection of values of the same basic type.
+2. How do you create a vector? — Using c().
+3. How do you create a matrix? — Using matrix().
+4. How do you add two vectors? — Using +.
+5. How do you multiply two matrices? — Using %*% for matrix multiplication.
+Experiment 4: Vector Subsetting, Matrix Subsetting and Arrays
+1. What is vector subsetting? — Selecting specific elements from a vector.
+2. What is matrix subsetting? — Selecting specific rows, columns, or elements from a matrix.
+3. Which function creates a matrix? — matrix().
+4. Which function finds matrix dimensions? — dim().
+5. What is an array? — An array stores data in multiple dimensions.
+Experiment 5: Pie Chart, 3D Pie Chart and Bar Chart
+1. What is a pie chart? — A circular chart showing proportions of data.
+2. Which function creates a pie chart? — pie().
+3. Which package provides pie3D()? — plotrix.
+4. Which function creates a bar chart? — barplot().
+5. What is the use of legend()? — It explains the colors or symbols used in a chart.
+Experiment 6: Box Plot, Histogram, Line Graph and Scatter Plot
+1. What is a box plot? — A graph showing data distribution, quartiles, median, and possible outliers.
+2. Which function creates a histogram? — hist().
+3. What is a histogram? — A graph showing the frequency distribution of numerical data.
+4. Which function creates a line graph? — plot() with a suitable type argument.
+5. What is a scatter plot? — A graph showing the relationship between two numerical variables.
+Experiment 7: Vectors, Lists and Data Frames
+1. What is a vector? — A one-dimensional collection of values of the same basic type.
+2. What is a list? — A data structure that can store different types of objects.
+3. What is a data frame? — A table containing rows and columns that can hold different data types in different columns.
+4. Which function creates a list? — list().
+5. Which function creates a data frame? — data.frame().
+Experiment 8: Exploratory Data Analysis (EDA)
+1. What is EDA? — Exploratory Data Analysis examines data to discover patterns, trends, and unusual values.
+2. Which function reads a CSV file? — read.csv().
+3. Which function displays dataset structure? — str().
+4. Which function gives summary statistics? — summary().
+5. How do you identify missing values? — Using is.na().
+6. Which function calculates correlation? — cor().
+7. What is an outlier? — A value that differs considerably from most other observations.
+Experiment 9: Linear and Multiple Linear Regression
+1. What is regression? — A statistical method used to model relationships and predict values.
+2. Which function performs regression in R? — lm().
+3. What is Linear Regression? — Regression using one independent variable.
+4. What is Multiple Linear Regression? — Regression using two or more independent variables.
+5. Which function predicts new values? — predict().
+6. What does summary() do? — It displays the model's statistical results.
+7. What is the dependent variable? — The variable we want to predict.
+8. What is an independent variable? — A variable used to predict the dependent variable.
