@@ -1,0 +1,431 @@
+Program 5: Pie Chart, 3D Pie Chart and Bar Chart in R
+Aim: To write an R program to draw (i) Pie Chart, (ii) 3D Pie Chart, and (iii) Bar Chart along with chart legend by considering a suitable CSV file.
+Step 1: Write the complete R program
+Write this program in your lab exam. I have added comments to make each step easy to understand.
+
+# Program 5: Pie Chart, 3D Pie Chart and Bar Chart
+
+# Install and load the package
+install.packages("plotrix")
+library(plotrix)
+
+# Create data
+Country <- c("India", "America", "Japan", "Australia")
+Population <- c(40, 25, 20, 15)
+
+# Create a data frame
+data <- data.frame(Country, Population)
+
+# Store data in CSV file
+write.csv(data, "country.csv", row.names = FALSE)
+
+# Read the CSV file
+data <- read.csv("country.csv")
+
+# Display the data
+print(data)
+
+# 1. Pie Chart
+pie(data$Population,
+    labels = data$Country,
+    main = "Pie Chart",
+    col = rainbow(4))
+
+# 2. 3D Pie Chart
+pie3D(data$Population,
+      labels = data$Country,
+      main = "3D Pie Chart",
+      col = rainbow(4))
+
+# 3. Bar Chart with Legend
+barplot(data$Population,
+        names.arg = data$Country,
+        main = "Country Population",
+        xlab = "Countries",
+        ylab = "Population",
+        col = rainbow(4))
+
+legend("topright",
+       legend = data$Country,
+       fill = rainbow(4))
+
+
+
+Important: install.packages("plotrix") is needed only the first time. If the package is already installed, you can skip that line. You need an internet connection to install it.
+Step 2: Understand the program line by line
+1. Install and load the package
+install.packages("plotrix")
+library(plotrix)
+
+
+- install.packages("plotrix") installs the package required for the 3D pie chart.
+- library(plotrix) loads the package into R.
+2. Create the data
+Country <- c("India", "America", "Japan", "Australia")
+Population <- c(40, 25, 20, 15)
+
+
+- Country stores the country names.
+- Population stores the corresponding values.
+- c() combines values into a vector.
+3. Create a data frame
+data <- data.frame(Country, Population)
+
+
+This combines the country names and population values into a table.
+4. Create and read the CSV file
+write.csv(data, "country.csv", row.names = FALSE)
+data <- read.csv("country.csv")
+print(data)
+
+
+- write.csv() saves the data into a CSV file.
+- row.names = FALSE prevents extra row names from being saved.
+- read.csv() reads the data from the CSV file.
+- print() displays the data.
+Step 3: Draw the three charts
+1. Pie Chart
+pie(data$Population,
+    labels = data$Country,
+    main = "Pie Chart",
+    col = rainbow(4))
+
+
+- pie() draws a pie chart.
+- data$Population gives the values.
+- labels displays country names.
+- main gives the chart title.
+- rainbow(4) provides four different colors.
+2. 3D Pie Chart
+pie3D(data$Population,
+      labels = data$Country,
+      main = "3D Pie Chart",
+      col = rainbow(4))
+
+
+- pie3D() draws a three-dimensional pie chart.
+- The remaining arguments specify labels, title, and colors.
+3. Bar Chart with Legend
+barplot(data$Population,
+        names.arg = data$Country,
+        main = "Country Population",
+        xlab = "Countries",
+        ylab = "Population",
+        col = rainbow(4))
+
+legend("topright",
+       legend = data$Country,
+       fill = rainbow(4))
+
+
+- barplot() draws the bar chart.
+- names.arg displays country names below the bars.
+- xlab and ylab give the axis labels.
+- legend() displays the chart legend at the top-right.
+- fill assigns the legend colors.
+Step 4: Expected output
+First, the following table is displayed in the R console:
+     Country Population
+1      India         40
+2    America         25
+3      Japan         20
+4  Australia         15
+
+
+Then, the RStudio Plots pane displays the charts.
+
+
+
+
+
+
+
+
+
+Output 1: Pie Chart
+
+Shows the four countries as colored slices of a circle.
+
+
+
+
+
+
+
+
+
+
+
+
+Output 2: 3D Pie Chart
+
+Shows the same data in a three-dimensional pie chart.
+
+
+
+
+
+
+
+
+
+
+
+
+Output 3: Bar Chart
+
+Shows four colored bars with country names and a legend.
+
+
+
+These images are examples of the expected chart appearance, not screenshots produced by running your exact program.
+Step 5: Viva questions and answers
+1. What is a CSV file?
+
+CSV stands for Comma-Separated Values. It stores data in tabular form.
+
+2. Which function is used to draw a pie chart?
+
+pie()
+
+3. Which function is used to draw a 3D pie chart?
+
+pie3D() from the plotrix package.
+
+4. Which function is used to draw a bar chart?
+
+barplot()
+
+5. Which function reads a CSV file?
+
+read.csv()
+
+6. What is the use of legend()?
+
+It explains the colors used in the chart.
+
+7. What is the use of rainbow(4)?
+
+It provides four different colors.
+Quick revision for the exam
+Remember these five points:
+1. Create the data using c().
+2. Combine the data using data.frame().
+3. Save and read the CSV using write.csv() and read.csv().
+4. Draw charts using pie(), pie3D(), and barplot().
+5. Display the legend using legend().
+Exam tip: Write the Aim first, then the complete program, and finally show the output. If your lab manual requires a CSV file to be prepared separately, follow that format; this program creates country.csv automatically.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now 9th one
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program 9: Linear Regression and Multiple Linear Regression in R
+Aim: To write an R program to illustrate Linear Regression and Multiple Linear Regression by considering a suitable CSV file.
+
+We will use car data containing Price, Mileage, and Age. The program creates a CSV file, reads it, performs both types of regression, and predicts a car's price.
+Step 1: Write the complete R program
+
+# Program 9: Linear Regression and Multiple Linear Regression
+
+# Create data
+Price <- c(500000, 450000, 400000, 350000, 300000)
+Mileage <- c(10000, 20000, 30000, 40000, 50000)
+Age <- c(1, 2, 3, 4, 5)
+
+# Create a data frame
+cars <- data.frame(Price, Mileage, Age)
+
+# Save data into CSV file
+write.csv(cars, "cars.csv", row.names = FALSE)
+
+# Read the CSV file
+cars <- read.csv("cars.csv")
+
+# Display the data
+print(cars)
+
+# 1. Linear Regression
+model1 <- lm(Price ~ Mileage, data = cars)
+
+# Display the result
+print(summary(model1))
+
+# Predict price using Mileage
+new_car1 <- data.frame(Mileage = 25000)
+prediction1 <- predict(model1, newdata = new_car1)
+
+print(prediction1)
+
+# 2. Multiple Linear Regression
+model2 <- lm(Price ~ Mileage + Age, data = cars)
+
+# Display the result
+print(summary(model2))
+
+# Predict price using Mileage and Age
+new_car2 <- data.frame(Mileage = 25000, Age = 2)
+prediction2 <- predict(model2, newdata = new_car2)
+
+print(prediction2)
+
+
+
+Step 2: Understand the program line by line
+1. Create the data
+Price <- c(500000, 450000, 400000, 350000, 300000)
+Mileage <- c(10000, 20000, 30000, 40000, 50000)
+Age <- c(1, 2, 3, 4, 5)
+
+
+- Price stores the prices of cars.
+- Mileage stores the distance travelled by cars.
+- Age stores the age of each car.
+- c() combines values into a vector.
+2. Create a data frame
+cars <- data.frame(Price, Mileage, Age)
+
+
+This combines all three variables into a table named cars.
+3. Create and read the CSV file
+write.csv(cars, "cars.csv", row.names = FALSE)
+cars <- read.csv("cars.csv")
+print(cars)
+
+
+- write.csv() saves the data in a CSV file.
+- read.csv() reads the data from the file.
+- print() displays the data.
+Step 3: Perform Linear Regression
+model1 <- lm(Price ~ Mileage, data = cars)
+print(summary(model1))
+
+
+- lm() is used to create a linear regression model.
+- Price is the dependent variable.
+- Mileage is the independent variable.
+- summary() displays the regression results.
+In simple words, linear regression predicts the car price using its mileage.
+Step 4: Predict the price using Linear Regression
+new_car1 <- data.frame(Mileage = 25000)
+prediction1 <- predict(model1, newdata = new_car1)
+print(prediction1)
+
+
+- We consider a new car with mileage of 25000.
+- predict() estimates its price using the model.
+- The predicted price is approximately 425000.
+Step 5: Perform Multiple Linear Regression
+model2 <- lm(Price ~ Mileage + Age, data = cars)
+print(summary(model2))
+
+
+- Multiple linear regression uses two or more independent variables.
+- Here, Mileage and Age are the independent variables.
+- Price is the dependent variable.
+In simple words, it predicts the car price using both mileage and age.
+Step 6: Predict the price using Multiple Linear Regression
+new_car2 <- data.frame(Mileage = 25000, Age = 2)
+prediction2 <- predict(model2, newdata = new_car2)
+print(prediction2)
+
+
+- We consider a car with mileage 25000 and age 2.
+- predict() estimates its price.
+- With this sample data, the predicted price is approximately 425000.
+Step 7: Expected output
+The R console first displays this table:
+   Price Mileage Age
+1 500000   10000   1
+2 450000   20000   2
+3 400000   30000   3
+4 350000   40000   4
+5 300000   50000   5
+
+
+After that, the console displays the regression summaries and the predicted prices.
+
+Expected prediction values:
+Linear Regression:
+425000
+
+Multiple Linear Regression:
+425000
+
+
+The regression summary also displays coefficients, residual information, and \(R^2\) values. Since the sample data makes Age directly proportional to Mileage, R may drop one redundant coefficient in the multiple regression summary. This is normal for these particular sample values.
+Step 8: Viva questions and answers
+1. What is regression?
+
+Regression is a statistical method used to predict the relationship between variables.
+
+2. What is Linear Regression?
+
+It predicts a dependent variable using one independent variable.
+
+3. What is Multiple Linear Regression?
+
+It predicts a dependent variable using two or more independent variables.
+
+4. Which function is used for regression in R?
+
+lm()
+
+5. Which function is used to predict values?
+
+predict()
+
+6. What is the dependent variable in this program?
+
+Price
+
+7. What are the independent variables?
+- Linear Regression: Mileage
+- Multiple Linear Regression: Mileage and Age
+8. What is the use of summary()?
+
+It displays the results and statistics of the regression model.
+
+9. What is the use of read.csv()?
+
+It reads data from a CSV file.
+Quick revision for your lab exam
+Remember these important lines:
+# Linear Regression
+model1 <- lm(Price ~ Mileage, data = cars)
+
+# Multiple Linear Regression
+model2 <- lm(Price ~ Mileage + Age, data = cars)
+
+# Display results
+summary(model1)
+summary(model2)
+
+# Predict values
+predict(model1, newdata = new_car1)
+predict(model2, newdata = new_car2)
