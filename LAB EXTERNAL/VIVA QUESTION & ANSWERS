@@ -1,0 +1,460 @@
+Important Viva Questions
+Learn these five questions for your practical exam.
+
+1. What is R?
+
+R is a programming language used for statistical calculations, data analysis and graphics.
+
+2. What is RStudio?
+
+RStudio is an IDE used to write, execute and debug R programs.
+
+3. What is a package in R?
+
+A package is a collection of R functions, data and documentation used to perform specific tasks.
+
+4. What is the use of install.packages()?
+
+It is used to download and install packages in R.
+
+Example:
+install.packages("ggplot2")
+
+5. What is the use of library()?
+
+It is used to load an already installed package into the R session.
+
+Example:
+library(ggplot2)
+
+Important exam preparation tip
+
+Remember these two commands:
+- install.packages() → Installs a package.
+- library() → Loads an installed package.
+These are very important for Experiment 1.
+
+
+
+
+
+
+
+
+
+VIVA QUESTIONS AND ANSWERS
+1. What is R programming?
+
+R is a programming language used for statistical calculations, data analysis, and graphics.
+
+2. What is a variable?
+
+A variable is a name used to store a value.
+
+3. How do you assign a value in R?
+
+We use the <- assignment operator.
+
+Example: x <- 10
+
+4. What are the data types in R?
+
+Logical, Numeric, Integer, Complex, Character, and Raw.
+
+5. What is a vector?
+
+A vector is a one-dimensional structure that stores elements of the same data type.
+
+6. What is the use of the class() function?
+
+It is used to identify the data type or class of a variable.
+
+7. What are arithmetic operators?
+
+They are operators used for mathematical calculations, such as +, -, *, and /.
+
+8. What is the use of the if-else statement?
+
+It is used to execute different statements based on a condition.
+
+9. What is a loop?
+
+A loop is used to execute a block of code repeatedly.
+
+10. What is a comment in R?
+
+A comment is a statement that is not executed. It starts with #.
+
+
+
+VIVA QUESTIONS AND ANSWERS
+1. What is the result of adding two vectors in R?
+
+It produces a new vector containing the sum of corresponding elements.
+
+2. How does R perform element-wise multiplication?
+
+R multiplies corresponding elements of two vectors using the * operator.
+
+3. What is the difference between matrix multiplication and element-wise multiplication?
+- Matrix multiplication uses the %*% operator.
+- Element-wise multiplication uses the * operator.
+4. How can you perform matrix division in R?
+
+We can calculate the inverse of a matrix using the solve() function.
+
+5. What is vector recycling?
+
+Vector recycling means repeating the elements of a shorter vector to match the length of a longer vector.
+
+
+
+
+
+
+Viva Questions and Answers
+1. What is a vector?
+A vector is a one-dimensional data structure that stores elements of the same type.
+
+2. How do you create a vector in R?
+Using the c() function.
+
+3. What is vector subsetting?
+Selecting specific elements from a vector using index numbers, conditions, or names.
+
+4. What is a matrix?
+A matrix is a two-dimensional data structure containing rows and columns.
+
+5. How do you create a matrix in R?
+Using the matrix() function.
+
+6. What is matrix subsetting?
+Selecting specific elements, rows, or columns from a matrix.
+
+7. What is an array?
+An array is a data structure that stores elements in multiple dimensions.
+
+8. What is the use of dim()?
+It is used to find or specify the dimensions of an array or matrix.
+
+9. How do you access the third element of a vector?
+my_vector[3]
+
+
+10. How do you access an element in a matrix?
+my_matrix[2, 3]
+
+
+
+
+Viva Questions and Answers
+1. What is a pie chart?
+
+A pie chart is a circular graph used to represent data in the form of slices.
+
+2. What is a bar chart?
+
+A bar chart represents data using rectangular bars.
+
+3. What is a CSV file?
+
+CSV stands for Comma-Separated Values. It stores data in rows and columns.
+
+4. Which function is used to read a CSV file in R?
+
+read.csv()
+
+5. What is ggplot2?
+
+ggplot2 is an R package used for creating graphs and data visualizations.
+
+6. What is the use of ggplot()?
+
+It is used to create graphs in R.
+
+7. What is the use of geom_bar()?
+
+It is used to create bar charts.
+
+8. What is the use of coord_polar()?
+
+It converts a bar chart into a circular or pie-style chart.
+
+9. What is the use of ggtitle()?
+
+It is used to add a title to a graph.
+
+10. What is the use of theme_minimal()?
+
+It gives a simple and clean appearance to a graph.
+
+Exam tip
+ Remember these important functions:
+- read.csv() – Read CSV file.
+- ggplot() – Create graph.
+- geom_bar() – Bar chart.
+- coord_polar() – Pie-style chart.
+- ggtitle() – Add graph title.
+
+
+Viva Questions and Answers
+1. What is a box plot?
+
+A box plot is used to represent the distribution of data.
+
+2. What is a histogram?
+
+A histogram represents the frequency distribution of numerical data.
+
+3. What is a line graph?
+
+A line graph represents data points connected by lines.
+
+4. What is a multiple line graph?
+
+It represents two or more lines in a single graph.
+
+5. What is a scatter plot?
+
+A scatter plot shows the relationship between two variables.
+
+6. Which function is used to draw a histogram?
+
+hist()
+
+7. Which function is used to draw a box plot?
+
+boxplot()
+
+8. What is the use of lines()?
+
+It is used to add another line to an existing graph.
+
+9. What is the use of read.csv()?
+
+It is used to read data from a CSV file.
+
+10. What is the use of write.csv()?
+
+It is used to save data into a CSV file.
+
+Exam tip
+ Remember these five functions:
+Graph	R function
+Box Plot	boxplot()
+Histogram	hist()
+Line Graph	plot()
+Multiple Lines	lines()
+Scatter Plot	plot()
+
+
+
+
+
+
+Viva Questions and Answers
+1. What is a vector in R?
+
+A vector stores elements of the same data type.
+
+2. Which function is used to create a vector?
+
+c()
+
+3. What is a list in R?
+
+A list stores different types of elements.
+
+4. Which function is used to create a list?
+
+list()
+
+5. What is a Data Frame?
+
+A Data Frame is a two-dimensional structure containing rows and columns.
+
+6. Which function is used to create a Data Frame?
+
+data.frame()
+
+7. How do you access an element from a list?
+
+Using [[ ]] or $.
+
+8. How do you access a column in a Data Frame?
+
+Using the $ operator.
+
+Example:
+my_data$Marks
+
+
+9. What is the use of head()?
+
+It displays the first few rows of a Data Frame.
+
+10. What is the use of mean()?
+
+It calculates the average value.
+Important Difference
+Vector        	  List	                  Data Frame
+Same data type  	Different data types  	Different column types
+One-dimensional  	Collection of elements	Rows and columns
+c()            	  list()	                data.frame()
+
+
+
+
+
+
+Viva Questions and Answers
+1. What is EDA?
+
+EDA stands for Exploratory Data Analysis. It is used to understand data and find patterns, missing values and outliers.
+
+2. What is a CSV file?
+
+CSV stands for Comma Separated Values. It stores data in rows and columns.
+
+3. Which function is used to read a CSV file in R?
+
+read.csv().
+
+4. What is the use of head()?
+
+It displays the first six rows of a dataset by default.
+
+5. What is the use of str()?
+
+It displays the structure and data types of a dataset.
+
+6. What is the use of summary()?
+
+It displays summary statistics such as minimum, maximum, mean and median.
+
+7. What is a missing value in R?
+
+A missing value is represented by NA.
+
+8. What is the use of is.na()?
+
+It checks whether values are missing.
+
+9. What is a histogram?
+
+A histogram is a graph used to show the distribution of numerical data.
+
+10. What is median imputation?
+
+It is replacing missing values with the median of that column.
+
+11. What is the use of as.factor()?
+
+It converts a column into a categorical factor.
+
+12. What is the use of colSums()?
+
+It calculates the sum of values in each column. With is.na(), it counts missing values in each column.
+
+Important for practical exam
+Remember these main functions:
+Function	Use
+read.csv()	Read CSV file
+head()	Display first rows
+str()	Check structure
+summary()	Summary statistics
+is.na()	Find missing values
+as.factor()	Convert to factor
+hist()	Draw histogram
+median()	Find median
+
+
+
+
+
+Viva Questions and Answers
+1. What is Linear Regression?
+
+Linear Regression is used to predict a value using one input variable.
+
+2. What is Multiple Linear Regression?
+
+It is used to predict a value using two or more input variables.
+
+3. Which function is used for regression in R?
+
+lm().
+
+4. What is the use of predict()?
+
+It is used to predict new values using a regression model.
+
+5. What is the use of summary()?
+
+It displays the model results and statistical information.
+
+6. What is the use of plot()?
+
+It is used to draw graphs.
+
+7. What is the use of abline()?
+
+It draws a straight regression line on a graph.
+
+8. What is the mtcars dataset?
+
+It is a built-in R dataset containing information about cars.
+
+9. What is a dependent variable?
+
+It is the value we want to predict.
+
+10. What is an independent variable?
+
+It is the input variable used to predict the output.
+
+
+
+
+
+
+Viva Questions and Answers
+1. What is the apply() function?
+
+It is used to apply a function to rows or columns of a matrix.
+
+2. What is the syntax of apply()?
+
+apply(X, MARGIN, FUN)
+
+3. What is MARGIN?
+
+It specifies whether the operation is performed on rows or columns.
+
+4. What does MARGIN = 1 mean?
+
+It means rows.
+
+5. What does MARGIN = 2 mean?
+
+It means columns.
+
+6. What is FUN?
+
+It specifies the function to be applied, such as mean, sum or max.
+
+7. What is the use of mean()?
+
+It calculates the average value.
+
+8. How do you create a matrix in R?
+
+Using the matrix() function.
+
+9. How do you give row names?
+
+Using rownames().
+
+10. How do you give column names?
+
+Using colnames().
